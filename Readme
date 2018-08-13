@@ -1,0 +1,40 @@
+Supported tags and respective Dockerfile links
+==============================================
+latest ([Dockerfile](https://github.com/pockost/docker-modsecurity-crs/blob/master/Dockerfile))
+
+
+ModSecurity
+===========
+
+ModSecurity is a Web Application Firewall (WAF). There is two part :
+
+* libModSecurity is the core of the project. This one can analyse web request and apply filter based on rule set.
+* modsecurity plugins are the binding allowing webserver (Apache, Nginx, ...) to forward received request to libModSecurity.
+
+For more information you can read <https://github.com/SpiderLabs/ModSecurity/tree/v3/master>.
+
+This image
+==============
+
+This image simply automate CRS update. Please see
+
+* [pockost/nginx-modsecurity](https://hub.docker.com/r/pockost/nginx-modsecurity/) if you're looking for modsecurity image
+* TODO for usage example.
+
+
+Available environment variable :
+================================
+
+* `CRS_BRANCH` github CRS branch to pull. Default to v3.0/master
+
+
+Usage example
+=============
+`docker run --rm -it -v /local/path/:/workdir/  pockost/modsecurity-crs:latest`
+
+You can also find an example on github repositiory.
+
+Thanks
+======
+* ModSecurity : <https://modsecurity.org/>
+* OWASP : <https://www.owasp.org/>
