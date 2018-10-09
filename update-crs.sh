@@ -1,9 +1,10 @@
 #!/bin/sh
 set -e
 
-cd /workdir
-
+WORKDIR=${WORKDIR:-"/workdir"}
 UPDATE_CRS=${UPDATE_CRS:-"false"}
+
+cd ${WORKDIR}/
 
 ./util/upgrade.py --geoip
 
@@ -13,4 +14,4 @@ then
 fi
 
 
-cp /workdir/crs-setup.conf.example /workdir/rules/00-crs-setup.conf
+cp ${WORKDIR}/crs-setup.conf.example ${WORKDIR}/rules/00-crs-setup.conf

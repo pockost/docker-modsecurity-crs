@@ -19,7 +19,6 @@ This image
 This image simply automate CRS update. Please see
 
 * [pockost/nginx-modsecurity](https://hub.docker.com/r/pockost/nginx-modsecurity/) if you're looking for modsecurity image
-* TODO for usage example.
 
 
 Available environment variable :
@@ -27,6 +26,7 @@ Available environment variable :
 
 * `CRS_BRANCH` github CRS branch to pull. Default to v3.0/master
 * `UPDATE_CRS` If you doesn't plan to use `CRS_BRANCH` you can set `UPDATE_CRS` to true in order to run `update.py --crs` with geoip updating.
+* `WORKDIR` The working directory on which the CRS project will be pulled
 
 
 Usage example
